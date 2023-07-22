@@ -19,10 +19,12 @@ public class BinaryTree<T extends Comparable<T>>
     }
 
 
-
     private Node addNode(Node node, T value)
     {
-        if (node.value.compareTo(value) == 0) return null;
+        if (node.value.compareTo(value) == 0)
+        {
+            return null;
+        }
         if (node.value.compareTo(value) > 0)
         {
             if (node.left == null)
@@ -35,6 +37,7 @@ public class BinaryTree<T extends Comparable<T>>
             node.left = rebalance(node.left);
             return result;
         }
+
         if (node.right == null)
         {
             node.right = new Node(value);
@@ -124,6 +127,8 @@ public class BinaryTree<T extends Comparable<T>>
         node.color = Color.red;
         return left;
     }
+
+
 
 
 
@@ -331,4 +336,5 @@ public class BinaryTree<T extends Comparable<T>>
             System.out.println();
         }
     }
+
 }
